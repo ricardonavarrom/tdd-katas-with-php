@@ -1,0 +1,19 @@
+{
+  "name": "ricardonavarrom/tdd-katas-with-php",
+  "description": "The main goal of this repo is hosting PHP katas to improve my TDD knowledge. Inside each kata there is a README with the assingment.",
+  "authors": [
+    {
+      "name": "Ricardo Navarro Moral"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "4.8,*",
+    "satooshi/php-coveralls": "~1.0"
+  }
+}
