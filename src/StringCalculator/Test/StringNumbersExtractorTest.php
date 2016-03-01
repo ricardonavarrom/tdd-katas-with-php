@@ -28,11 +28,36 @@ class StringNumbersExtractorTest extends \PHPUnit_Framework_TestCase
 
     public function test_extract_with_two_numbers_string_returns_an_array_with_those_numbers()
     {
-        $this->assertEquals(array(1, 2), $this->numbersExtractor->extract('//;\n1;2'));
+        $this->assertEquals(array(1, 2), $this->numbersExtractor->extract('1,2'));
     }
 
     public function test_extract_with_multiple_numbers_string_returns_an_array_with_those_numbers()
     {
+        $this->assertEquals(array(1, 2, 3), $this->numbersExtractor->extract('1,2,3'));
+    }
+
+    public function test_extract_with_new_lines_delimiter()
+    {
+        $this->assertEquals(array(1, 2, 3), $this->numbersExtractor->extract('1\n2,3'));
+    }
+
+    public function test_extract_with_custom_delimiter()
+    {
+        $this->assertEquals(array(1, 2), $this->numbersExtractor->extract('//;\n1;2'));
+    }
+
+    public function test_extract_with_any_lenght_custom_delimiter()
+    {
+        $this->assertEquals(array(1, 2, 3), $this->numbersExtractor->extract('//[***]\n1***2***3'));
+    }
+
+    public function test_extract_with_multiple_custom_delimiters()
+    {
         $this->assertEquals(array(1, 2, 3), $this->numbersExtractor->extract('//[*][%]\n1*2%3'));
+    }
+
+    public function test_extract_with_any_lenght_multiple_custom_delimiters()
+    {
+        $this->assertEquals(array(1, 2, 3), $this->numbersExtractor->extract('//[***][%%%]\n1***2%%%3'));
     }
 }

@@ -30,7 +30,7 @@ class NumbersValidatorTest extends \PHPUnit_Framework_TestCase
      * @expectedException \StringCalculator\Exception\StringCalculatorNegativeNumbersException
      * @expectedExceptionMessage Negatives not allowed: -2
      */
-    public function test_validate_with_one_negative_numbers_throws_exception()
+    public function test_validate_with_one_negative_number_throws_exception()
     {
         $this->numbersValidator->validate(array(1, -2, 3));
     }

@@ -28,6 +28,6 @@ class NumbersFiltersTest extends \PHPUnit_Framework_TestCase
 
     public function test_filter_with_numbers_bigger_than_1000_returns_an_ignore_those_numbers_array()
     {
-        $this->assertEquals(array(1), $this->numbersFilter->filter(array(1, 1001)));
+        $this->assertEquals(array(2), $this->numbersFilter->filter(array(2, 1001)));
     }
 }
