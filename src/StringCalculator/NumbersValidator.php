@@ -4,6 +4,8 @@ namespace StringCalculator;
 
 use StringCalculator\Exception\StringCalculatorNegativeNumbersException;
 
+require __DIR__ . '/../../vendor/autoload.php';
+
 class NumbersValidator
 {
     public function validate($numbers)

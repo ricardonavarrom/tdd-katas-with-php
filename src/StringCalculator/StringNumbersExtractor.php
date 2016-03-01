@@ -2,6 +2,8 @@
 
 namespace StringCalculator;
 
+require __DIR__ . '/../../vendor/autoload.php';
+
 class StringNumbersExtractor
 {
     private $delimitersExtractor;
